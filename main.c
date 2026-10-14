@@ -48,7 +48,7 @@ int main(int argc, char** argv){
         page_num = addr / PAGE_SIZE;
         offset = (addr & 0xFFFF) % PAGE_SIZE;
 
-        if(g_page_table[page_num] == NULL){
+        if(g_page_table[page_num] == -1){
             load_page_into_frame(page_num, offset);
         }
 
